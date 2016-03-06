@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Townie Cup Championship</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Bootstrap Core JavaScript
+    <script src="js/bootstrap.min.js"></script>
+    -->
+	<script src="js/jquery.js"></script>
+
+  <script src="js/config.js"></script>
+  <script src="js/register.js"></script>
+  <script src="js/login.js"></script>
+  <script src="lib/js.cookie-2.0.4.min.js"></script>
+  <script src="js/userSession.js"></script>
+  <script src="js/recoverPassword.js"></script>
+  <script src="js/leaderBoard.js"></script>
+  <script src="js/teamRegistration.js"></script>
+
+  <script type="text/javascript"src="themes/jquery-2.0.3.min.js"></script>
+  <!-- begin JSlider setup  -->
+
+  <link rel="stylesheet" type="text/css" media="all" href="themes/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="themes/jgallery.min.css?v=1.5.5" />
+
+  <script type="text/javascript" src="themes/jgallery.min.js?v=1.5.5"></script>
+  <script type="text/javascript" src="themes/touchswipe.min.js"></script>
+  <script type="text/javascript" src="themes/gallery.js"></script>
+
+  <script type="text/javascript">
+    $(window).load(function() {
+      createAlbum(2006, 22, 'gallery')
+    });
+  </script>
+  <!-- end JSlider setup  -->
+
+</head>
+
+<body>
+
+    <div class="brand">Pictures</div>
+    <!--
+    <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
+	-->
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">TownieCup</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="scholarshipPage.html">Scholarship</a>
+                    </li>
+					<li>
+                        <a href="pictures.html">Pictures</a>
+                    </li>
+                    <li>
+                    	<a href="leaderBoardPage.html">Leader Board</a>
+                    </li>
+                    <li>
+                    	<a href="hashtagPage.html">#TC</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+            	</ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	<div class="container">
+		<div id ="userInfo">
+			<button class="btn btn-default pull-right" id="regButton" data-toggle="modal" data-target="#register">Register</button>
+		    <button class="btn btn-default pull-right" id="loginButton" data-toggle="modal" data-target="#login">Log In</button>
+      	</div>
+      	<br>
+		<br>
+	  <div id="gallery-wrapper" class="panel panel-default">
+	    <div class="panel-heading">2006 Slideshow</div>
+	      <div id="gallery" class="panel-body">
+	      </div><!--close slider-->
+	  </div><!--close gallery-wrapper-->
+	</div>
+	
+	<footer>
+	    <div class="container">
+	        <div class="row">
+	            <div class="col-lg-12 text-center">
+	                <p>Copyright &copy; Your Website 2014</p>
+	            </div>
+	        </div>
+	    </div>
+	</footer>
+	
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+<!-- ModalLogin -->
+<div id="login" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Login</h4>
+      </div>
+      <div class="modal-body" align="center">
+        <form id="loginForm" action="http://" method="POST">
+					<div data-role="fieldcontain">
+						<label for="emailLog">Email</label>
+						<br>
+						<input align='center'type="text" id="emailLog" autofocus="autofocus"/>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="passLog">Password</label>
+						<br>
+						<input type="password" id="passLog" />
+					</div>
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="logSubmit" class="btn btn-default" data-dismiss="modal">Submit</button>
+        <button  type="button" data-ajax='false' class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#forgotInfo">Forgot info</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- ModalForgot info -->
+<div id="forgotInfo" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Forgot Info?</h4>
+      </div>
+      <div class="modal-body" align="center">
+       <form id="forgotInfoForm" action="http://" method="POST">
+                    <div data-role="fieldcontain">
+                        <label for="emailIDUpdate">Email ID</label>
+                        <br>
+                        <input type="text" id="emailIDUpdate" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="securityAnswer">What city was your high school in?</label>
+                        <br>
+                        <input type="text" id="securityAnswer" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="newPassword">New Password</label>
+                        <br>
+                        <input type="text" id="newPassword" />
+                    </div>
+                    
+                </form>
+      </div>
+      <div class="modal-footer">
+       <button type="button" id="recoverButton" class="btn btn-default" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- ModalRegister -->
+<div id="register" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Register</h4>
+      </div>
+      <div class="modal-body" align="center">
+       <form id="regForm" action="http://" method="POST">
+                    <div data-role="fieldcontain">
+                        <label for="regFirstName">First Name</label>
+                        <br>
+                        <input type="text" id="regFirstName" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="regLastName">Last Name</label>
+                        <br>
+                        <input type="text" id="regLastName" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="regEmail">Email</label>
+                        <br>
+                        <input type="text" id="regEmail" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="regPass">Password</label>
+                        <br>
+                        <input type="password" id="regPass" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="securityQuestionAnswer">What city was your high school in?</label>
+                        <br>
+                        <input type="text" id="securityQuestionAnswer" />
+                    </div>
+                </form>
+      </div>
+      <div class="modal-footer">
+       <button type="button" id="regSubmit" class="btn btn-default" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal TEAM Register -->
+<div id="capRegPage" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" align="center">Create a Team!</h4>
+      </div>
+      <div class="modal-body" align="center">
+       <form id="capRegForm" action="http://" method="POST">
+                    <div data-role="fieldcontain">
+                        <label for="teamNameReg">Team Name</label>
+                        <br>
+                        <input type="text" id="teamNameReg" autofocus="autofocus"/>
+                    </div>
+                </form>
+      </div>
+      <div class="modal-footer">
+       <button type="button" id="teamRegSubmit" class="btn btn-default" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</html>
